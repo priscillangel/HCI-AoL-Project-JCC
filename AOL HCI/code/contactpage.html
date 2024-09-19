@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us | Jockey's Conference Center</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="contactstyle.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <nav>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <div class="logo">
+            <p>Jockey's Conference Center</p>
+        </div>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="alleventpage.html">Event</a></li>
+            <li><a href="pricepage.html">Price List</a></li>
+            <li><a href="aboutpage.html">About Us</a></li>
+            <li><a href="contactpage.html" class="active">Contact Us</a></li>
+        </ul>
+
+    </nav>
+
+    <div class="background"></div>
+
+    <!-- FORM -->
+
+    <div class="title">
+        <h2>Contact Form</h2>
+    </div>
+
+    <form id="contactform">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" name="phone" required>
+    
+        <label>Preferred Contact Method</label>
+        <label>
+          <input type="radio" name="contactMethod" value="whatsapp" checked> Phone (WhatsApp)
+        </label>
+        <label>
+          <input type="radio" name="contactMethod" value="email"> Email
+        </label>
+        <label>
+          <input type="radio" name="contactMethod" value="both"> Both
+        </label>
+    
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+    
+        <a href="thankyoupage.html"><input type="submit" value="Submit"></a>
+
+      </form>
+    
+      <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          if (validateForm()) {
+            // Submit the form or perform any necessary action
+            console.log('Form submitted successfully');
+          }
+        });
+    
+        function validateForm() {
+          var name = document.getElementById('name').value;
+          var email = document.getElementById('email').value;
+          var phone = document.getElementById('phone').value;
+          var message = document.getElementById('message').value;
+    
+          var errorMessages = [];
+    
+          if (name.trim() === '') {
+            errorMessages.push('Name is required');
+          }
+    
+          if (email.trim() === '') {
+            errorMessages.push('Email is required');
+          } else if (!isValidEmail(email)) {
+            errorMessages.push('Email is invalid');
+          }
+    
+          if (phone.trim() === '') {
+            errorMessages.push('Phone number is required');
+          } else if (!isValidPhoneNumber(phone)) {
+            errorMessages.push('Phone number is invalid');
+          }
+    
+          if (message.trim() === '') {
+            errorMessages.push('Message is required');
+          }
+    
+          if (errorMessages.length > 0) {
+            displayErrors(errorMessages);
+            return false;
+          }
+    
+          return true;
+        }
+    
+        function isValidEmail(email) {
+          // Simple email validation regex pattern
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailPattern.test(email);
+        }
+    
+        function isValidPhoneNumber(phone) {
+          // Simple phone number validation regex pattern
+          var phonePattern = /^[0-9]{10}$/;
+          return phonePattern.test(phone);
+        }
+    
+        function displayErrors(errors) {
+          var errorContainer = document.getElementById('errorContainer');
+          errorContainer.innerHTML = '';
+    
+          errors.forEach(function(error) {
+            var errorElement = document.createElement('span');
+            errorElement.className = 'error';
+            errorElement.textContent = error;
+            errorContainer.appendChild(errorElement);
+          });
+        }
+      </script>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+
+            <div class="sec logo">
+                <h1>Jockey's Conference Center</h1>
+                <p>PT Indonesia International Expo</p>
+            </div>
+
+            <div class="sec navigation">
+                <h2>Navigation</h2>
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="alleventpage.html">Event</a></li>
+                    <li><a href="pricepage.html">Price List</a></li>
+                    <li><a href="aboutpage.html">About Us</a></li>
+                    <li><a href="contactpage.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="sec contact">
+                <h2>Contact</h2>
+                <ul class="info">
+
+                    <li>
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <p><a href="tel:jcc">(+62)8 7780552551</a></p>
+                    </li>
+
+                    <li>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <p><a href="mailto:jjc">JockeyConCenter@gmail.com</a></p>
+                    </li>
+
+                    <li>
+                        <span><i class="fa-brands fa-instagram"></i></span>
+                        <p><a href="insta:jcc">jockey.center</a></p>
+                    </li>
+
+                    <li>
+                        <span><i class="fa-brands fa-facebook"></i></span>
+                        <p><a href="fb:jcc">Jockey's Conference Center Indonesia</a></p>
+                    </li>
+
+                    <li>
+                        <span><i class="fa-brands fa-twitter"></i></span>
+                        <p><a href="twt:jcc">Jockey.Center</a></p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

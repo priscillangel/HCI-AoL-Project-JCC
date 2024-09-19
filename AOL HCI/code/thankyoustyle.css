@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lora', serif;
+}
+
+body{
+    height: 100vh;
+    background-color: #FFEDD2;
+    background-size: cover;
+    background-position: center;
+}
+
+/* HEADER */
+nav{
+    width: 100%;
+    height: 75px;
+    background-color: #884A39;
+    line-height: 75px;
+    padding: 0px 80px;
+}
+
+nav .logo{
+    float: left;
+}
+
+nav .logo p{
+    font-size: 34px;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    color: #FFEDD2;
+}
+
+nav ul{
+    float: right;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    font-weight: 500;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #FFEDD2;
+    font-size: 18px;
+    padding: 0px 20px;
+}
+
+nav ul li a:hover{
+    font-weight: 600;
+    font-style: italic;
+}
+
+nav ul .active{
+    font-weight: 600;
+    font-style: italic;
+}
+
+.checkbtn{
+    color: #FFEDD2;
+    font-size: 25px;
+    cursor: pointer;
+    float: right;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+@media screen and (max-width: 990px){
+    nav{
+        padding: 0px 50px;
+    }
+
+    .checkbtn{
+        display: block;
+    }
+
+    nav .logo p{
+        font-size: 30px;
+    }
+
+    nav ul{
+        width: 100%;
+        height: 100vh;
+        background-color: #884A39;
+        position: fixed;
+        top: 75px;
+        left: -100%;
+        text-align: center;
+        transition: 0.4s ease;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 60px 0px;
+        line-height: 20px;
+    }
+
+    #check:checked ~ ul{
+        left: 0;
+    }
+    
+    .background{
+        background-color: #FFEDD2;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: calc(100vh - 75px);
+    }
+}
+
+/* MESSAGE */
+.thanks{
+    color: #884A39;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.thanks h2{
+    text-align: center;
+}
+
+/* FOOTER */
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #884A39;
+}
+
+footer .container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+footer .container .sec h1{
+    position: relative;
+    color: #FFEDD2;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+footer .container .sec.navigation{
+    position: relative;
+    color: #FFEDD2;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+footer .container .sec.contact{
+    position: relative;
+    color: #FFEDD2;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+footer .container .sec p{
+    color: #FFEDD2;
+}
+
+footer .container .navigation{
+    position: relative;
+}
+
+footer .container .navigation ul li{
+    list-style: none;
+}
+
+footer .container .navigation ul li a{
+    color: #FFEDD2;
+    text-decoration: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: inline-block;   
+}
+
+footer .container .navigation ul li a:hover{
+    font-style: italic;
+}
+
+footer .container .contact .info{
+    position: relative;
+}
+
+footer .container .contact .info li{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+    margin-top: 10px;
+}
+
+footer .container .contact .info li span{
+    color: #FFEDD2;
+    font-size: 20px;
+}
+
+footer .container .contact .info li a{
+    color: #FFEDD2;
+    text-decoration: none;
+}
+
+@media(max width: 990px){
+   
+    footer{
+        padding: 40px;   
+    }
+
+    footer .container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 20px;
+    }
+}
+
+@media(max width: 770px){
+
+    footer .container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 20px;
+    }
+
+}
